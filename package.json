@@ -1,0 +1,26 @@
+{
+  "name": "educational_buddy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AryanAg08/Educational_Buddy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AryanAg08/Educational_Buddy/issues"
+  },
+  "homepage": "https://github.com/AryanAg08/Educational_Buddy#readme",
+  "dependencies": {
+    "discord-package-npm": "^1.2.6",
+    "discord.js": "^14.9.0",
+    "dotenv": "^16.0.3",
+    "mongoose": "^7.0.3"
+  }
+}
