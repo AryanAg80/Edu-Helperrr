@@ -1,5 +1,5 @@
-const { timer, showtimer } = require("../functions/13timers");
-const { DeadlineADD, DeadlineList, Deadlineclear, DeadlineRemove } = require("../functions/6Deadline_Module");
+const { timer, showtimer } = require("../functions/4timers");
+const { DeadlineADD, DeadlineList, Deadlineclear, DeadlineRemove } = require("../functions/5Deadline_Module");
 
 module.exports = (client) => {
     client.on('interactionCreate', async interaction => {

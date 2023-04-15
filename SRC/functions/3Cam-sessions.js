@@ -1,4 +1,4 @@
-const camsc = require("../models/6cam-session");
+const camsc = require("../schema/10cam");
 const { scheduleJob } = require("node-schedule");
 const moment = require("moment");
 const ms = require("ms");
@@ -50,11 +50,11 @@ async function CamCheck(client, TextChan) {
                     TextChan.send(`<@${User}> you didn't open up your cam/SS!! Shifting you to studyhall.`);
                     const guild = client.guilds.cache.get(GG);
                     const Mem = guild.members.cache.get(User);
-                    const VCchannel = guild.channels.cache.find(channel => channel.id === '860931349993357372');
+                    const VCchannel = guild.channels.cache.find(channel => channel.id === '1017810847906660395');
                     Mem.voice.setChannel(VCchannel);
 
                     const a2 = await camsc.findOneAndDelete({
-                        GG: "703937875720273972",
+                        GG: "1017810847046832179",
                         user: User,
                     })
                     console.log(`deleted old log for ${Mem}`);
@@ -67,7 +67,7 @@ async function CamCheck(client, TextChan) {
 async function Joined(client, Chan, user, role, GG) {
     const guild = client.guilds.cache.get(GG);
     guild.members.cache.get(user).roles.add(role);
-    Chan.send(`Welcome to study Vc <a:Butterfly:861213437060317194> <@${user}>. \n We hope you will enjoy studying here. <a:typingcat:718162344781283360>  \n\n Please turn your cam/SS on!!`);
+    Chan.send(`Welcome to study Vc 📚 <@${user}>. \n We hope you will enjoy studying here. 📑 \n\n Please turn your cam/SS on!!`);
 
     const a1 = await camsc.findOneAndUpdate({
         user,
@@ -85,7 +85,7 @@ async function Joined(client, Chan, user, role, GG) {
 async function Left(client, user, role, GG) {
     const guild = client.guilds.cache.get(GG);
     guild.members.cache.get(user).roles.remove(role);
-    guild.members.cache.get(user).roles.remove("936494499151106098");
+    //guild.members.cache.get(user).roles.remove();
 
     const a2 = await camsc.findOneAndDelete({
         user,
@@ -129,5 +129,29 @@ async function MovingTime(user) {
     console.log(a4);
 }
 
+const Cam = require("../schema/10cam");
+//const { scheduleJob } = require("node-schedule");
 
-module.exports = { daily, CamCheck, Joined, Left, DeleteLog, InVC, MovingTime };
+async function Check(client, member, GG) {
+    const A2 = await Cam.find({
+        GG,
+        user: "anon",
+        Enable: "YES",
+    })
+    if (A2) {
+        for (a2 of A2) {
+            const channel = a2.Chan
+
+            const Chan = client.channels.cache.get(channel);
+            if (!Chan) return;
+            else {
+                const T = await member.send(`Welcome to the Cam/SS only vc!! \n Please turn on your cam in next 10m or you will be kicked out of the voice channel!!`);
+                if (!T) return;
+
+            }
+        }
+    }
+}
+
+module.exports = { daily, CamCheck, Joined, Left, DeleteLog, InVC, MovingTime, Check };
+

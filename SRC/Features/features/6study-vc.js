@@ -38,7 +38,7 @@ module.exports = (client) => {
                 guild.roles.cache.get('1071677282160234536').members.map(m => {
                     console.log(m.user.id);
                     const user = m.user.id
-                    const B = AddTime(user)
+                    const B = AddTime(user, m.username)
                    
                     
                 });
@@ -80,7 +80,7 @@ module.exports = (client) => {
 }
 
 
-async function AddTime (user) {
+async function AddTime (user, name) {
     ADDCoins(user, 4);
     const Timelog = "0.1"
     const SV = require("../../schema/6study");
@@ -95,6 +95,7 @@ async function AddTime (user) {
             UserID: user,
          },{
             UserID: user,
+            name,
             $inc: {
                 alltime: Timelog,
                 daily: Timelog,

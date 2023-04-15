@@ -191,6 +191,7 @@ async function StudyTime(interaction) {
     const guild = interaction.guild
     const guildId = guild.id
     const user = interaction.member.id
+    
 
         const { MessageEmbed } = require("discord.js");
 

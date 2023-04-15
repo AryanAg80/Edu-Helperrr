@@ -7,7 +7,7 @@ module.exports = (client) => {
         if (user.bot) return;
         
 
-        if (reaction.message.channel.id === "1071487528256938145") {
+        if (reaction.message.channel.id === "1096795140565237910") {
             if (reaction.emoji.name === '🍅') {
                 const Ps = require('../../schema/4pom-schema')
                 const Gs = require('../../schema/5pomuser')
@@ -78,7 +78,7 @@ module.exports = (client) => {
                     let ID = uNid.user.username
                     console.log(ID)
 
-                    const categoryId = "1017810847906660392";
+                    const categoryId = "1096796368422580246";
                     let role = reaction.message.guild.roles.cache.find(role => role.name === "@everyone");
                     let pomrole = reaction.message.guild.roles.cache.find(role => role.id === Rr);
                     var userName = reaction.message.author.username;

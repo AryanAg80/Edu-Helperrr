@@ -14,9 +14,9 @@ module.exports = {
         const Ps = require('../../schema/4pom-schema')
         const Gs = require('../../schema/5pomuser')
 
-        const Cha = message.client.channels.cache.get('1071487528256938145')
-        const Tcha = message.client.channels.cache.get('1071487528256938145');
-        const Echa = message.client.channels.cache.get('1071487528256938145');
+        const Cha = message.client.channels.cache.get('1096795140565237910')
+        const Tcha = message.client.channels.cache.get('1096795140565237910');
+        const Echa = message.client.channels.cache.get('1096795140565237910');
 
         
             if (arguments[0] === 'name') {
@@ -454,8 +454,8 @@ module.exports = {
                                     new: true
                                 })
 
-                            Tcha.send(`🍅 **${Rt}** pomsessions of **${Pt}m.** start in **${St}m.** join here: <#1071487528256938145> 🍅`)
-                            Echa.send(`🍅 **${Rt}** pomsessions of **${Pt}m.** start in **${St}m.** join here: <#1071487528256938145> 🍅`)
+                            Tcha.send(`🍅 **${Rt}** pomsessions of **${Pt}m.** start in **${St}m.** join here: <#1096653672156512268> 🍅`)
+                           // Echa.send(`🍅 **${Rt}** pomsessions of **${Pt}m.** start in **${St}m.** join here: <#1071487528256938145> 🍅`)
                         }
                     } else {
                         if (Pt < 10 || isNaN(Pt)) {
@@ -475,7 +475,6 @@ module.exports = {
                                 },
                                 reason: 'Pom-Role',
                             })
-                                .then(console.log)
                                 .catch(console.error);
 
                             let Pe = new Discord.MessageEmbed()
@@ -543,7 +542,7 @@ module.exports = {
                                 })
 
                             Tcha.send(`🍅 **1** pomsessions of **${Pt}m.** start in **${St}m.** join here: <#1071487528256938145> 🍅`)
-                            Echa.send(`🍅 **1** pomsessions of **${Pt}m.** start in **${St}m.** join here: <#1071487528256938145> 🍅`)
+                         //   Echa.send(`🍅 **1** pomsessions of **${Pt}m.** start in **${St}m.** join here: <#1071487528256938145> 🍅`)
                         }
                     }
 
@@ -630,7 +629,7 @@ module.exports = {
                             })
 
                         Tcha.send(`🍅 **1** pomsessions of **${Pt}m.** starts **now** join here: <#1071487528256938145> 🍅`)
-                        Echa.send(`🍅 **1** pomsessions of **${Pt}m.** starts **now** join here: <#1071487528256938145> 🍅`)
+                      //  Echa.send(`🍅 **1** pomsessions of **${Pt}m.** starts **now** join here: <#1071487528256938145> 🍅`)
                     }
                 }
             }

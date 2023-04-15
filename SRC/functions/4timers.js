@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const T1 = require("../schema/25timers");
+const T1 = require("../schema/13timers");
 
 async function timer (interaction) {
    const time = interaction.options.getNumber("duration");

@@ -1,7 +1,7 @@
 module.exports = (client) => {
 
 const schedule = require("node-schedule");
-const T1 = require("../../schema/25timers");
+const T1 = require("../../schema/13timers");
 
 client.on('ready', async () => {
   
